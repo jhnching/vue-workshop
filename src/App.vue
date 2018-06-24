@@ -4,7 +4,7 @@
     <div>Todos remaining: <span :class="{green: todos.length === 0, red: todos.length > 0}">{{ todos.length }}</span></div>
     <div>There are {{ unsavedTodos }} unsaved todos</div>
     <ul>
-      <li v-for="todo in todos">
+      <li v-for="todo in todos" :key="todo.id">
         <todo-item :todo="todo" :saveTodo="saveTodo" :editTodo="editTodo" :deleteTodo="deleteTodo"></todo-item>
       </li>
     </ul>
