@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import TodoItem from './components/TodoItem.vue'
+import TodoItem from './components/TodoItem.vue';
 
 export default {
   name: 'app',
@@ -24,16 +24,16 @@ export default {
     return {
       todos: [],
       incrementingId: 0,
-    }
+    };
   },
   computed: {
     unsavedTodos: function() {
       return this.todos.filter(todo => !todo.saved).length;
-    }
+    },
   },
   methods: {
     findTodo: function(id) {
-      return this.todos.find(todo => todo.id === id)
+      return this.todos.find(todo => todo.id === id);
     },
     addTodo: function() {
       this.todos.push({
@@ -44,15 +44,16 @@ export default {
     },
     saveTodo: function(id) {
       const currentTodo = this.findTodo(id);
-      currentTodo.value ? currentTodo.saved = true : alert('Please enter a valid Todo');
+      currentTodo.value
+        ? (currentTodo.saved = true)
+        : alert('Please enter a valid Todo');
     },
     editTodo: function(id) {
       this.findTodo(id).saved = false;
     },
     deleteTodo: function(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
-    }
-  }
-}
+    },
+  },
+};
 </script>
-

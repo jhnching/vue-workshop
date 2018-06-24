@@ -16,5 +16,5 @@
 export default {
   name: 'TodoItem',
   props: ['todo', 'saveTodo', 'editTodo', 'deleteTodo'],
-}
+};
 </script>
