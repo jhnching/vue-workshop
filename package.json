@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "jest --config test/unit/jest.conf.js"
+    "test": "jest --config test/unit/jest.conf.js",
+    "test:watch": "jest --config test/unit/jest.conf.js --watch"
   },
   "dependencies": {
     "vue": "^2.5.16"
