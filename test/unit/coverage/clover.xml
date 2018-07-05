@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1530803153755" clover="3.2.0">
+  <project timestamp="1530803153755" name="All files">
+    <metrics statements="10" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="11" coveredmethods="0" elements="23" coveredelements="0" complexity="0" loc="10" ncloc="10" packages="2" files="2" classes="2">
+      <package name="app">
+        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="10" coveredmethods="0"/>
+        <file name="App.vue" path="/Users/javier/Documents/workspace/vue-workshop/src/app/App.vue">
+          <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="10" coveredmethods="0"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="39" count="0" type="stmt"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="55" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="exercises">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="Text.vue" path="/Users/javier/Documents/workspace/vue-workshop/src/exercises/Text.vue">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="8" count="0" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
