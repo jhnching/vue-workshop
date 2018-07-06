@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
-import Text from './Text';
+import Text from './Exercises';
 
-describe('Text', () => {
+describe('Exercises', () => {
   let wrapper;
 
   beforeEach(() => {
@@ -15,7 +15,7 @@ describe('Text', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('should render the computed message', () => {
+  test('should reverse the reversedMessage data property using a computed function', () => {
     const expected = 'euV ot noitcudortnI';
     const actual = wrapper.find('.reverse-message').text();
 
@@ -29,7 +29,7 @@ describe('Text', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('should apply styles', () => {
+  test('should apply the red style if applyClass property is true', () => {
     expect(wrapper.contains('#styled-red.red')).toBeTruthy();
 
     wrapper.setData({ applyClass: false });
@@ -37,7 +37,7 @@ describe('Text', () => {
     expect(wrapper.contains('#styled-red.red')).toBeFalsy();
   });
 
-  test('should conditionally render with v-if', () => {
+  test('should conditionally render with v-if if shouldRender is true', () => {
     expect(wrapper.contains('#should-render')).toBeFalsy();
 
     wrapper.setData({ shouldRender: true });
@@ -58,7 +58,7 @@ describe('Text', () => {
     expect(wrapper.vm.buttonClickCount).toEqual(2);
   });
 
-  test('should link input to inputText data key using v-model', () => {
+  test('should link inputText data key by using v-model', () => {
     wrapper.setData({ inputText: 'some text' });
     expect(wrapper.find('input').element.value).toEqual('some text');
   });
