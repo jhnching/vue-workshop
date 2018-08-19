@@ -1,20 +1,26 @@
 <template>
   <div id="todo-item">
-  <span v-if="todo.value && todo.saved">
-    {{ todo.value }}
-    <button @click="editTodo(todo)">edit</button>
+
+  <!-- Display the value and edit button -->
+  <!-- Shown when completed editing a todo -->
+  <span>
+    <button>edit</button>
   </span>
-  <span v-else>
-    <input v-model="todo.value"/>
-    <button @click="saveTodo(todo)">save</button>
+
+  <!-- Allow editing with input and save button -->
+  <!-- Shown when editing a todo -->
+  <span>
+    <input />
+    <button>save</button>
   </span>
-  <button @click="deleteTodo(todo)">delete</button>
+
+  <button>delete</button>
 </div>
 </template>
 
 <script>
 export default {
   name: 'TodoItem',
-  props: ['todo', 'saveTodo', 'editTodo', 'deleteTodo'],
+  props: [],
 };
 </script>
