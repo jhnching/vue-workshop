@@ -1,6 +1,6 @@
 <template>
   <div id="todo-item">
-  <span v-if="todo.value && todo.saved">
+  <span v-if="todo.saved">
     {{ todo.value }}
     <button @click="editTodo(todo)">edit</button>
   </span>
