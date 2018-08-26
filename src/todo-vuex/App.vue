@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>My TODO App</h1>
-    <div>Todos remaining: <span :class="{green: todos.length === 0, red: todos.length > 0}">{{ todos.length }}</span></div>
+    <div>Total # of Todos: <span :class="{green: todos.length === 0, red: todos.length > 0}">{{ todos.length }}</span></div>
     <div>There are {{ unsavedTodos }} unsaved todos</div>
     <ul>
       <li v-for="todo in todos" :key="todo.id">
@@ -16,7 +16,7 @@
 import { mapActions, mapGetters } from 'vuex';
 
 import TodoItem from './components/TodoItem.vue';
-import store from './Store';
+import store from './store';
 
 export default {
   name: 'app',
