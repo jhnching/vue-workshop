@@ -4,12 +4,12 @@
 
         <p class="reverse-message"><!-- Convert reversedMessage here --></p>
 
-        <p class="to-uppercase"><!-- Use a method to convert values here --></p>
+        <p class="to-uppercase"><!-- Convert upperCaseMessage here --></p>
 
-        <div id="styled-red"><!-- Apply the red class to this div --></div>
+        <div id="styled-red"><!-- Apply the red class to this div based on the applyClass condition --></div>
 
         <div id="should-render">
-            <p>This will shown when shouldRender flag is true</p>
+            <p>This will show when shouldRender flag is true</p>
         </div>
 
         <ul><!-- Render a list from listData --></ul>
@@ -17,7 +17,7 @@
         <!-- Apply a click handler here to increment buttonClickCount per click -->
         <button>click me!</button>
 
-        <!-- I will automatically update inputText data property! -->
+        <!-- I will two way bind inputText data property! -->
         <input />
     </div>
 </template>
@@ -25,6 +25,7 @@
 <script>
 export default {
   data: function() {
+    // You won't need to touch this data
     return {
       title: 'Hello World!',
       reversedMessage: 'Introduction to Vue',
