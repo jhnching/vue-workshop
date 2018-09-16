@@ -32,9 +32,6 @@ export default {
     },
   },
   methods: {
-    findTodo: function(id) {
-      return this.todos.find(todo => todo.id === id);
-    },
     addTodo: function() {
       this.todos.push({
         id: this.incrementingId++,
@@ -43,10 +40,10 @@ export default {
       });
     },
     saveTodo: function(todo) {
-      this.findTodo(todo.id).saved = true;
+      todo.saved = true;
     },
     editTodo: function(todo) {
-      this.findTodo(todo.id).saved = false;
+      todo.saved = false;
     },
     deleteTodo: function(todo) {
       this.todos = this.todos.filter(currentTodo => currentTodo.id !== todo.id);
