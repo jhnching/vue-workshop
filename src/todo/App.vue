@@ -51,3 +51,12 @@ export default {
   },
 };
 </script>
+<style>
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+</style>
