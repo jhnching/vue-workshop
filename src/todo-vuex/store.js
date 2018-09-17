@@ -14,20 +14,20 @@ const getters = {
 };
 
 const mutations = {
-  addTodo: function(state) {
+  addTodo(state) {
     state.todos.push({
       id: state.incrementingId++,
       value: '',
       saved: false,
     });
   },
-  saveTodo: function(state, payload) {
+  saveTodo(state, payload) {
     payload.todo.saved = true;
   },
-  editTodo: function(state, payload) {
+  editTodo(state, payload) {
     payload.todo.saved = false;
   },
-  deleteTodo: function(state, payload) {
+  deleteTodo(state, payload) {
     state.todos = state.todos.filter(todo => todo !== payload.todo);
   },
 };
