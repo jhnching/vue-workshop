@@ -14,7 +14,7 @@
             <p>This will show when shouldRender flag is true</p>
         </div>
 
-        <ul><!-- Render a list from listData. Don't forget to bind the key! --></ul>
+        <ul><!-- Render a list from listData. --></ul>
 
         <!-- Apply a click handler here to increment buttonClickCount per click -->
         <button>click me!</button>
