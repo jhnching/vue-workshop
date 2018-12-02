@@ -2,17 +2,19 @@
     <div class="hello-world">
         <h1><!-- Place the title here --></h1>
 
-        <p class="reverse-message"><!-- Convert reversedMessage here --></p>
+        <p class="reverse-message">
+            <!-- Convert toBeReversedMessage here with a computed function. Hint: Use the Array reverse method -->
+        </p>
 
-        <p class="to-uppercase"><!-- Convert upperCaseMessage here --></p>
+        <p class="to-uppercase"><!-- Convert toBeUpperCaseMessage here with a computed function --></p>
 
-        <div id="styled-red"><!-- Apply the red class to this div based on the applyClass condition --></div>
+        <div id="styled-red"><!-- Apply the red class to this div based on the shouldApplyClass condition --></div>
 
         <div id="should-render">
             <p>This will show when shouldRender flag is true</p>
         </div>
 
-        <ul><!-- Render a list from listData --></ul>
+        <ul><!-- Render a list from listData. --></ul>
 
         <!-- Apply a click handler here to increment buttonClickCount per click -->
         <button>click me!</button>
@@ -28,9 +30,9 @@ export default {
     // You won't need to touch this data
     return {
       title: 'Hello World!',
-      reversedMessage: 'Introduction to Vue',
-      upperCaseMessage: 'Should be uppercase text',
-      applyClass: true,
+      toBeReversedMessage: 'Introduction to Vue',
+      toBeUpperCasedMessage: 'Should be uppercase text',
+      shouldApplyClass: true,
       shouldRender: false,
       listData: [1, 2, 3],
       buttonClickCount: 0,

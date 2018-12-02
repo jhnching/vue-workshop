@@ -5,7 +5,7 @@
     <div>There are {{ unsavedTodos }} unsaved todos</div>
     <ul>
       <li v-for="todo in todos" :key="todo.id">
-        <todo-item :todo="todo" :saveTodo="saveTodo" :editTodo="editTodo" :deleteTodo="deleteTodo"></todo-item>
+        <todo-item :todo="todo" @save-todo="saveTodo" @edit-todo="editTodo" @delete-todo="deleteTodo"></todo-item>
       </li>
     </ul>
     <button @click="addTodo">Add todo</button>

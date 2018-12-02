@@ -29,10 +29,10 @@ describe('Exercises', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('should apply the red style if applyClass property is true', () => {
+  test('should apply the red style if shouldApplyClass property is true', () => {
     expect(wrapper.contains('#styled-red.red')).toBeTruthy();
 
-    wrapper.setData({ applyClass: false });
+    wrapper.setData({ shouldApplyClass: false });
 
     expect(wrapper.contains('#styled-red.red')).toBeFalsy();
   });
@@ -46,7 +46,15 @@ describe('Exercises', () => {
   });
 
   test('should render a list with v-for', () => {
-    expect(wrapper.find('ul').findAll('li').length).toEqual(3);
+    const listData = [1, 2, 3];
+
+    const listItems = wrapper.find('ul').findAll('li');
+
+    expect(listItems.length).toEqual(3);
+
+    listItems.wrappers.forEach((elementWrapper, index) =>
+      expect(elementWrapper.text()).toEqual(String(listData[index])),
+    );
   });
 
   test('should increment the count when pressing on the button', () => {
