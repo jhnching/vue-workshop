@@ -9,6 +9,7 @@ log/*.log
 tmp/**
 node_modules/
 package-lock.json
+yarn-err.log*
 .sass-cache
 css/reveal.min.css
 js/reveal.min.js
