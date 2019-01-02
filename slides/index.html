@@ -55,7 +55,7 @@
       <section>
         <h3>Data</h3>
         <p>Contains all the data scoped within the component for use</p>
-        <pre><code data-trim>
+        <pre class="typescript"><code data-trim>
           export default {
             name: 'App',
             data: function() {
@@ -74,7 +74,7 @@
           properties change.
           Relies on caching. Computed method accessed similar to a data prop.
         </p>
-        <pre><code data-trim>
+        <pre class="typescript"><code data-trim>
           export default {
             name: 'App',
             data: function() {
@@ -96,7 +96,7 @@
           An object containing functions that provide functionality to the app. Unlike computed properties, methods
           will always re-evaluate.
         </p>
-        <pre><code data-trim>
+        <pre class="typescript"><code data-trim>
           export default {
             name: 'App',
             methods: {
@@ -112,13 +112,13 @@
         <p>
           An object containing an array of props that it will be receiving from it’s parent.
         </p>
-        <pre><code data-trim>
+        <pre class="typescript"><code data-trim>
           export default {
             name: 'child',
             props: ['prop1', 'prop2']
           };
         </code></pre>
-        <pre><code data-trim>
+        <pre class="typesript"><code data-trim>
           export default {
             name: 'child',
             props: {
@@ -154,9 +154,7 @@
       </section>
       <section>
         <h3>v-for</h3>
-        <ul>
-          <li>Used to loop through an array and display child elements using that array data</li>
-        </ul>
+        <p>Used to loop through an array and display child elements using that array data</p>
         <pre class="html"><code data-trim>
           <ul>
             <li v-for="item in list" :bind="item.id">
@@ -167,9 +165,7 @@
       </section>
       <section>
         <h3>v-model</h3>
-        <ul>
-          <li>Used for two way data binding for inputs</li>
-        </ul>
+        <p>Used for two way data binding for inputs</p>
         <pre class="html"><code data-trim>
           <input type="text" v-model="firstName" />
           <p>Your first name is {{ firstName }}</p>
