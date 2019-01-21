@@ -1,20 +1,19 @@
 <template>
-  <div id="todo-item">
-  <span v-if="todo.saved">
-    {{ todo.value }}
-    <button @click="$emit('edit-todo', todo)">edit</button>
-  </span>
-  <span v-else>
-    <input v-model="todo.value"/>
-    <button @click="$emit('save-todo', todo)">save</button>
-  </span>
-  <button @click="$emit('delete-todo', todo)">delete</button>
-</div>
+  <div>
+    <span v-if="todo.saved">
+      {{ todo.value }}
+      <button @click="$emit('edit-todo', todo)">edit</button>
+    </span>
+    <span v-else>
+      <input v-model="todo.value"/>
+      <button @click="$emit('save-todo', todo)">save</button>
+    </span>
+    <button @click="$emit('delete-todo', todo)">delete</button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'TodoItem',
   props: ['todo'],
 };
 </script>
