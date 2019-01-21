@@ -54,7 +54,11 @@
       </section>
       <section>
         <h3>Data</h3>
-        <p>Contains all the data scoped within the component for use</p>
+        <ul>
+          <li>Contains all the data scoped within the component for use</li>
+          <li>Accessed in the component with this (this.classId in example)</li>
+          <li>Data must be in a function for each instance to maintain its own values</li>
+        </ul>
         <pre class="typescript"><code data-trim>
           export default {
             name: 'App',
@@ -68,12 +72,29 @@
         </code></pre>
       </section>
       <section>
+        <h3>Methods</h3>
+        <ul>
+          <li>An object containing functions that provide functionality to the app.</li>
+          <li>Methods will always recompute when called.</li> 
+        </ul>
+        <pre class="typescript"><code data-trim>
+          export default {
+            name: 'App',
+            methods: {
+              toUpperCase: function(value) {
+                return value.toUpperCase();
+              }
+            }
+          };
+        </code></pre>
+      </section>
+      <section>
         <h3>Computed</h3>
-        <p>
-          An object containing functions that perform calculations on data and will auto update whenever component
-          properties change.
-          Relies on caching. Computed method accessed similar to a data prop.
-        </p>
+        <ul>
+          <li>Performs calculations on data and will auto update whenever component properties change.
+          <li>Relies on caching.</li>
+          <li>Computed method accessed similar to a data prop.</li>
+        </ul>
         <pre class="typescript"><code data-trim>
           export default {
             name: 'App',
@@ -91,27 +112,11 @@
         </code></pre>
       </section>
       <section>
-        <h3>Methods</h3>
-        <p>
-          An object containing functions that provide functionality to the app. Unlike computed properties, methods
-          will always re-evaluate.
-        </p>
-        <pre class="typescript"><code data-trim>
-          export default {
-            name: 'App',
-            methods: {
-              toUpperCase: function(value) {
-                return value.toUpperCase();
-              }
-            }
-          };
-        </code></pre>
-      </section>
-      <section>
         <h3>Props</h3>
-        <p>
-          An object containing an array of props that it will be receiving from it’s parent.
-        </p>
+        <ul>
+          <li>An array of props that it will be receiving from it’s parent.</li>
+          <li>Can alternatively be written in object notation to ensure typings</li>
+        </ul>
         <pre class="typescript"><code data-trim>
           export default {
             name: 'child',
@@ -175,6 +180,7 @@
         <h3>v-bind</h3>
         <ul>
           <li>Used to bind a value to an element attribute (class, style, etc)</li>
+          <li>Also used to bind props to the child element</li>
           <li>Shorthand notation for it is the “:” symbol
             <ul>
               <li>v-bind: === :</li>
@@ -184,6 +190,7 @@
         <pre class="html"><code data-trim>
           <p class="class1" :class="{ class2: isActive }"></p>
           <p class="class1" v-bind:class="{ class2: isActive }"></p>
+          <blog title="This is my first blog" :content="blog.content"></blog>
         </code></pre>
       </section>
       <section>
@@ -205,21 +212,36 @@
         </code></pre>
       </section>
       <section>
-        <h3>v-on Custom Events</h3>
-        <ul>
-          <li>When we want to notify the parent of changes from child</li>
-          <li>Emit an event to the parent when child event triggers</li>
-        </ul>
-        <pre class="html"><code data-trim>
-          <div id="child">
-            <input v-model="name" />
-            <button @click="$emit('update-name', name)">Update Name</button>
-          </div>
+        <section>
+          <h3>v-on Custom Events</h3>
+          <ul>
+            <li>When we want to notify the parent of changes from child</li>
+            <li>Emit an event to the parent when child event triggers</li>
+          </ul>
+          <pre class="html"><code data-trim>
+            <div id="child">
+              <input v-model="name" />
+              <button @click="$emit('update-name', name)">Update Parent Name</button>
+            </div>
 
-          <div id="parent">
-            <child @update-name="updateName"></child>
-          </div>
-        </code></pre>
+            <div id="parent">
+              <child @update-name="updateName"></child>
+            </div>
+          </code></pre>
+        </section>
+        <section>
+          <p>We can also access passed values with $event</p>
+          <pre class="html"><code data-trim>
+            <div id="child">
+              <input type="number" v-model="tax" />
+              <button @click="$emit('add-tax', counter)">Add Tax</button>
+            </div>
+  
+            <div id="parent">
+              <include-tax @add-tax="total += $event"></include-tax>
+            </div>
+          </code></pre>
+        </section>
       </section>
       <section>
         <h2>Todo App Requirements</h2>
@@ -235,6 +257,9 @@
           </li>
           <li>Should show the number of unsaved Todos</li>
         </ul>
+      </section>
+      <section>
+        <img src="./img/todo-app.png" />
       </section>
     </div>
   </div>
