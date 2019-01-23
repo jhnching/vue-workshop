@@ -6,7 +6,6 @@
   "subdomain": "revealjs",
   "main": "js/reveal.js",
   "scripts": {
-    "test": "grunt test",
     "start": "grunt serve",
     "build": "grunt"
   },
